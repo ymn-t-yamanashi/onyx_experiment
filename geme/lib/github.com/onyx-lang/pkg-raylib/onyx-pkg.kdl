@@ -1,0 +1,18 @@
+package {
+    name "raylib" 
+    author "Brendan Hansen" 
+    url "" 
+    description "Raylib bindings for Onyx" 
+    version "0.0.8" 
+}
+
+config {
+    dependency_source_path "./lib" 
+    dependency_binary_path "./bin" 
+}
+
+native {
+    library "onyx_raylib" 
+    build "onyx run --generate-foreign-info build.onyx" 
+}
+
