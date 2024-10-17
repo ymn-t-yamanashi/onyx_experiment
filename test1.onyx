@@ -1,0 +1,14 @@
+use core{iter, println}
+
+main :: () {
+
+    values := 
+    1 .. 10
+    |> iter.as_iter()
+    |> iter.take(2)
+    |> iter.map(x => x * x);
+
+    for v in values {
+        println(v);
+    }
+}
