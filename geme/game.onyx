@@ -1,0 +1,26 @@
+#load "./lib/packages"
+
+use core {*}
+use raylib
+
+main :: () {
+    // Create a new window
+    raylib.InitWindow(1200, 900, "Raylib Example");
+
+    // Limit FPS to 60
+    raylib.SetTargetFPS(60);
+
+    while !raylib.WindowShouldClose() {
+        // Start drawing
+        raylib.BeginDrawing();
+        
+        // Clear the screen to a gray screen
+        raylib.ClearBackground(.{20, 20, 20, 255});
+
+        // Finish drawing
+        raylib.EndDrawing();
+    }
+
+    // Close window when done
+    raylib.CloseWindow();
+}
