@@ -51,13 +51,13 @@ moveCheckpointAndSpawnMines :: () {
     };
 
     // Spawn 5 mines at a time.
-    for 5 {
-        mine := mineGenerator()
-            |> iter.skip_while(m => collidesWithCheckpointOrPlayer(m))
-            |> iter.next();
+    // for 5 {
+    //     mine := mineGenerator()
+    //         |> iter.skip_while(m => collidesWithCheckpointOrPlayer(m))
+    //         |> iter.next();
 
-        array.push(&mines, mine);
-    }
+    //     array.push(&mines, mine);
+    // }
 }
 
 collidesWithCheckpointOrPlayer :: (m: Mine) -> bool {
@@ -71,16 +71,16 @@ collidesWithCheckpointOrPlayer :: (m: Mine) -> bool {
         );
 }
 
-#doc "Produces an interator of random mines."
-mineGenerator :: () -> Iterator(Mine) {
-    return iter.generator(&.{}, _ => {
-        return Mine.{
-            x = random.float(0, 1180),
-            y = random.float(0, 880),
-            size = random.float(10, 30),
-        }, true;
-    });
-}
+// #doc "Produces an interator of random mines."
+// mineGenerator :: () -> Iterator(Mine) {
+//     return iter.generator(&.{}, _ => {
+//         return Mine.{
+//             x = random.float(0, 1180),
+//             y = random.float(0, 880),
+//             size = random.float(10, 30),
+//         }, true;
+//     });
+// }
 main :: () {
     random.set_seed(os.time());
 
